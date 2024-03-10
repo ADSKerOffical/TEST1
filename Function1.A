@@ -1,0 +1,64 @@
+last_pick_sin_mrazy = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame 
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-23, 47, 39)
+task.wait()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+local actionRadius = 1.5
+
+game:GetService("CoreGui").PurchasePrompt.Enabled = false
+
+for i, v in pairs(workspace:GetDescendants()) do
+    if v:IsA("ClickDetector") then
+        local objectPosition = v.Parent.Position
+        local playerPosition = humanoidRootPart.Position
+        local distance = (objectPosition - playerPosition).magnitude 
+
+        if distance <= actionRadius then
+            fireclickdetector(v)
+        end
+    end
+end
+task.wait(0.1)
+for i = 1, 50 do
+    task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-25, 52, 24)
+end
+task.wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = last_pick_sin_mrazy
+wait(0.3)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-15, 52, -34)
+task.wait()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+local actionRadius = 1.5
+
+game:GetService("CoreGui").PurchasePrompt.Enabled = false
+
+for i, v in pairs(workspace:GetDescendants()) do
+    if v:IsA("ClickDetector") then
+        local objectPosition = v.Parent.Position
+        local playerPosition = humanoidRootPart.Position
+        local distance = (objectPosition - playerPosition).magnitude 
+
+        if distance <= actionRadius then
+            fireclickdetector(v)
+        end
+    end
+end
+task.wait(0.1)
+for i = 1, 15 do
+    wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11, 52, -54)
+end
+task.wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = last_pick_sin_mrazy
+wait(0.5)
+local args = {
+    [1] = Enum.KeyCode.Z
+}
+
+game:GetService("Players").LocalPlayer.Character.Tormentors.Remote:FireServer(unpack(args))
